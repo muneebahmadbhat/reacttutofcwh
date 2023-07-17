@@ -19,10 +19,22 @@ export default function Navbar(props) {
             <a className="nav-link" href="/">{props.aboutText}</a>
           </li>
               </ul>
-        <form className="d-flex">
+        {/* <form className="d-flex">
           <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
           <button className="btn btn-outline-primary" type="submit">Search</button>
-        </form>
+        </form> */}
+        <div class={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
+  <input class="form-check-input" onClick={props.toggleMode3} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+  <label class="form-check-label" htmlFor="flexSwitchCheckDefault">Enable GreenMode</label>
+</div>
+
+
+<div class={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
+  <input class="form-check-input"  onClick={props.toggleMode2} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+  <label class="form-check-label" htmlFor="flexSwitchCheckDefault">Enable RedMode</label>
+</div>
+
+
 
         <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
   <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
@@ -39,7 +51,7 @@ Navbar.propTypes = {
     aboutText:PropTypes.string
 }
 
-  Navbar.defaultProps = {
-    title : 'Set title here',
-    aboutText : 'About text here'
-  };
+  // Navbar.defaultProps = {
+  //   title : 'Set title here',
+  //   aboutText : 'About text here'
+  // };
